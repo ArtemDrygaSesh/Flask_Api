@@ -5,6 +5,7 @@ from .models import Ticket, User, Group, tickets_groups, users_groups
 from .schemas import user_schema, users_schema, group_schema, groups_schema, ticket_schema, tickets_schema
 
 
+
 #error handling
 @app.errorhandler(404)
 def not_found(error):
