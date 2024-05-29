@@ -3,6 +3,8 @@
 Installation:
 pip install -r requirements.txt
 
+All files are located in the dev branch
+
 All available endpoints:
 
 /auth/api/v1.0/tickets
@@ -17,4 +19,5 @@ All available endpoints:
 admin user:
 
 username: SeshMaster
+
 password: 1234
