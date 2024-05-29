@@ -147,14 +147,12 @@ def delete_ticket(id):
 
 #endpoints for users
 @app.route('/auth/api/v1.0/users', methods=['GET'])
-@auth.login_required(role='Admin')
 def get_users():
     users = User.query.all()
 
     return users_schema.dump(users)
 
 @app.route('/auth/api/v1.0/users/<id>', methods=['GET'])
-@auth.login_required(role='Admin')
 def get_user(id):
     user = User.query.filter(User.id == id).one_or_none()
     if user is not None:
@@ -163,7 +161,6 @@ def get_user(id):
         abort(404)
 
 @app.route('/auth/api/v1.0/users', methods=['POST'])
-@auth.login_required(role='Admin')
 def add_user():
     username = request.json.get('username')
     password = request.json.get('password')
@@ -176,7 +173,6 @@ def add_user():
 
 
 @app.route('/auth/api/v1.0/users/<id>', methods=['PUT'])
-@auth.login_required(role='Admin')
 def update_user(id):
     user = User.query.filter(User.id == id).one_or_none()
     if user is not None:
@@ -223,7 +219,6 @@ def get_groups():
     return groups_schema.dump(groups)
 
 @app.route('/auth/api/v1.0/groups/<id>', methods=['GET'])
-@auth.login_required(role='Admin')
 def get_group(id):
     group = Group.query.filter(Group.id == id).one_or_none()
     if group is not None:
@@ -232,7 +227,6 @@ def get_group(id):
         abort(404)
 
 @app.route('/auth/api/v1.0/groups', methods=['POST'])
-@auth.login_required(role='Admin')
 def add_group():
     name = request.json.get('name')
     new_group = Group(name)
@@ -242,7 +236,6 @@ def add_group():
 
 
 @app.route('/auth/api/v1.0/groups/<id>', methods=['PUT'])
-@auth.login_required(role='Admin')
 def update_group(id):
     group = Group.query.filter(Group.id == id).one_or_none()
     if group is not None:
@@ -264,7 +257,6 @@ def update_group(id):
         abort(404)
 
 @app.route('/auth/api/v1.0/groups/<id>', methods=['DELETE'])
-@auth.login_required(role='Admin')
 def delete_group(id):
     group = Group.query.filter(Group.id == id).one_or_none()
     if group is not None:
