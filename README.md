@@ -9,15 +9,15 @@ All available endpoints:
 
 /auth/api/v1.0/tickets
 
-/auth/api/v1.0/tickets/<id>
+/auth/api/v1.0/tickets/id
 
 /auth/api/v1.0/users
 
-/auth/api/v1.0/users/<id>
+/auth/api/v1.0/users/id
 
 /auth/api/v1.0/groups
 
-/auth/api/v1.0/groups/<id>
+/auth/api/v1.0/groups/id
 
 admin user:
 
