@@ -4,6 +4,7 @@ Installation:
 pip install -r requirements.txt
 
 All available endpoints:
+
 /auth/api/v1.0/tickets
 /auth/api/v1.0/tickets/<id>
 
@@ -14,5 +15,6 @@ All available endpoints:
 /auth/api/v1.0/groups/<id>
 
 admin user:
+
 username: SeshMaster
 password: 1234
